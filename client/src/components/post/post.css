@@ -32,6 +32,8 @@
   font-weight: 700;
   margin-top: 15px;
   cursor: pointer;
+  color: teal;
+  text-transform: uppercase;
 }
 
 .postDate {
@@ -54,3 +56,9 @@
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
 }
+ @media (max-width: 510px) {
+  .post {
+  width:100%;
+
+}
+ }

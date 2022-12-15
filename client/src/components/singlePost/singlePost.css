@@ -1,5 +1,6 @@
 .singlePost {
   flex: 9;
+  width: 80vw;
 }
 
 .singlePostWrapper {
@@ -97,3 +98,8 @@
   align-self: flex-end;
   margin-top: 20px;
 }
+@media (max-width:380px) {
+  .singlePostInfo {
+ flex-direction: column;
+ row-gap: 10px;
+}}

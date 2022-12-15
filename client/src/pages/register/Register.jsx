@@ -24,24 +24,25 @@ export default function Register() {
     }
   };
   return (
-    <div className="register">
-      <span className="registerTitle">Register</span>
+    <div className="registerContainer">
+      <div className="register">
+      <h2 className="registerTitle">Register</h2>
       <form className="registerForm" onSubmit={handleSubmit}>
-        <label>Username</label>
+        
         <input
           type="text"
           className="registerInput"
           placeholder="Enter your username..."
           onChange={(e) => setUsername(e.target.value)}
         />
-        <label>Email</label>
+        
         <input
           type="text"
           className="registerInput"
           placeholder="Enter your email..."
           onChange={(e) => setEmail(e.target.value)}
         />
-        <label>Password</label>
+       
         <input
           type="password"
           className="registerInput"
@@ -52,12 +53,21 @@ export default function Register() {
           Register
         </button>
       </form>
+      <div>
+        {error && <span style={{color:"red", marginBlock:"10px"}}>Something went wrong!</span>}
+        <div>
+          <div className="Tologin">
+            <p>already have account</p>
       <button className="registerLoginButton">
         <Link className="link" to="/login">
           Login
         </Link>
       </button>
-      {error && <span style={{color:"red", marginTop:"10px"}}>Something went wrong!</span>}
+      
+          </div>
+        </div>
+        </div>
+      </div>
     </div>
   );
 }

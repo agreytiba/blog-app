@@ -1,4 +1,4 @@
-.register {
+.registercontainer {
   height: calc(100vh - 50px);
   display: flex;
   flex-direction: column;
@@ -11,25 +11,33 @@
     url("https://images.pexels.com/photos/317355/pexels-photo-317355.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   background-size: cover;
 }
-
+.register{
+  background-color: #fff;
+  padding: 20px;
+  width: 300px;
+  margin: 60px auto;
+  box-shadow: 0 0 3px #333;
+}
 .registerTitle {
-  font-size: 50px;
+  font-size: 30px;
+  text-align: center;
+  color: teal;
 }
 
 .registerForm {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
+  row-gap: 20px;
 }
 
-.registerForm > label {
-  margin: 10px 0;
-}
+
 
 .registerInput {
   padding: 10px;
-  background-color: white;
+outline: none;
   border: none;
+  border-bottom: 1px solid #333;
 }
 
 .registerButton {
@@ -38,18 +46,21 @@
   background-color: teal;
   border: none;
   color: white;
-  border-radius: 10px;
-  padding: 10px;
+  width: 50%;
+  padding: 14px;
+  align-self: flex-end;
 }
 
+.Tologin{
+  margin-top: 30px;
+  display: flex;
+   column-gap: 10px;
+   flex-flow: row wrap;
+ }
+.Tologin p{
+  font-size: 16px;
+ }
 .registerLoginButton {
-  position: absolute;
-  top: 60px;
-  right: 20px;
-  background-color: lightcoral;
-  cursor: pointer;
   border: none;
-  padding: 10px;
-  color: white;
-  border-radius: 10px;
+ color:  tomato;
 }

@@ -1,12 +1,14 @@
 .sidebar {
   flex: 3;
-  margin: 20px;
-  padding-bottom: 30px;
-  background-color: #fdfbfb;
-  border-radius: 10px;
+  padding: 70px 30px;
+
+  background-color: #333;
+  color: #fff;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content:center;
+  column-gap: 20px;
 }
 
 .sidebarItem {
@@ -19,11 +21,10 @@
   margin: 10px;
   padding: 5px;
   width: 80%;
-  border-top: 1px solid #a7a4a4;
-  border-bottom: 1px solid #a7a4a4;
+  text-transform: capitalize;
   font-family: "Varela Round", sans-serif;
   font-size: 12px;
-  color: #222;
+  color:rgb(4, 117, 182) ;
   font-weight: 600;
   line-height: 20px;
   text-align: center;
@@ -33,9 +34,9 @@
   margin-top: 15px;
 }
 
-.sidebarItem > p {
+/* .sidebarItem > p {
   padding: 30px;
-}
+} */
 
 .sidebarList {
   list-style: none;
@@ -61,4 +62,30 @@
     font-size: 16px;
     margin-left: 10px;
     cursor: pointer;
+}
+@media screen and (max-width:760px) {
+    .sidebar{
+        flex-direction: row;
+        justify-content: space-between;
+        row-gap: 10px;
+        column-gap: none;
+          padding: 40px 0;
+    }
+    .sidebarTitle {
+ 
+  width: 100%;
+ 
+}
+.sidebarItem{
+  width: 100%;
+}
+}
+@media screen and (max-width:500px) {
+    .sidebar{
+        flex-direction: column;
+        justify-content: space-between;
+       text-align: start;
+        row-gap: 10px;
+        width: 100%;
+    }
 }

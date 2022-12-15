@@ -1,5 +1,6 @@
 .write {
   padding-top: 50px;
+ 
 }
 
 .writeImg {
@@ -12,6 +13,7 @@
 
 .writeForm {
   position: relative;
+  
 }
 
 .writeFormGroup {
@@ -60,4 +62,55 @@
   border-radius: 10px;
   cursor: pointer;
   font-size: 16px;
+}
+@media (max-width:600px) {
+ 
+
+
+.writeImg {
+  margin-left: 20px;
+  width: 50vw;
+  height: 250px;
+ 
+}
+
+.writeForm {
+  position: relative;
+  
+}
+
+.writeFormGroup {
+  margin-left: 20px;
+
+}
+
+.writeIcon {
+  width: 25px;
+  height: 25px;
+ 
+}
+
+.writeInput {
+  font-size: 30px;
+ 
+  padding: 20px;
+  width: 70vw;
+}
+
+
+
+
+
+.writeSubmit {
+  position: absolute;
+  top: 500px;
+  left: 50px;
+  color: white;
+  background-color: teal;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
 }

@@ -1,9 +1,15 @@
 import "./post.css";
 import { Link } from "react-router-dom";
+import { Context } from '../../context/Context';
+import { useContext } from "react";
 
 export default function Post({ post }) {
+
   const PF = "http://localhost:5000/images/";
+
+
   return (
+    <div>
     <div className="post">
       {post.photo && <img className="postImg" src={PF + post.photo} alt="" />}
       <div className="postInfo">
@@ -21,6 +27,8 @@ export default function Post({ post }) {
         </span>
       </div>
       <p className="postDesc">{post.desc}</p>
+      </div>
     </div>
+
   );
 }

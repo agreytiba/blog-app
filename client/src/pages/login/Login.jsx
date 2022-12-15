@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useContext, useRef } from "react";
+import { useContext, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
 import "./login.css";
@@ -8,9 +8,11 @@ export default function Login() {
   const userRef = useRef();
   const passwordRef = useRef();
   const { dispatch, isFetching } = useContext(Context);
-
+  const [error, setError] = useState(false);
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError(false);
     dispatch({ type: "LOGIN_START" });
     try {
       const res = await axios.post("/auth/login", {
@@ -20,21 +22,25 @@ export default function Login() {
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
     } catch (err) {
       dispatch({ type: "LOGIN_FAILURE" });
+      setError(true)
+
     }
+    
   };
 
   return (
     <div className="login">
-      <span className="loginTitle">Login</span>
+      <div className="wrapper">
+      <h2 className="loginTitle">Login</h2>
       <form className="loginForm" onSubmit={handleSubmit}>
-        <label>Username</label>
+        
         <input
           type="text"
           className="loginInput"
           placeholder="Enter your username..."
           ref={userRef}
         />
-        <label>Password</label>
+        
         <input
           type="password"
           className="loginInput"
@@ -45,11 +51,18 @@ export default function Login() {
           Login
         </button>
       </form>
+      <div>
+      {error && <span style={{ color: "red", marginBlock: "10px" }}> Wrong credentials</span>}
+      <div className="Toregister">
+        <p> you don't have account </p>
       <button className="loginRegisterButton">
         <Link className="link" to="/register">
           Register
         </Link>
-      </button>
+        </button>
+        </div>
+             </div>
+      </div>
     </div>
   );
 }

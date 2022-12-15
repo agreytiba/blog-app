@@ -11,50 +11,65 @@
     url("https://images.pexels.com/photos/768473/pexels-photo-768473.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
   background-size: cover;
 }
+.wrapper{
+  width:  300px;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 3px #333;
+
+}
 
 .loginTitle {
-  font-size: 50px;
+  margin-top: 10px;
+  font-size: 30px;
+  text-align: center;
+  color: #000;
 }
 
 .loginForm {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+ 
+  row-gap: 30px;
 }
 
-.loginForm > label {
-  margin: 10px 0;
-}
 
 .loginInput {
-  padding: 10px;
-  background-color: white;
+  height: 30px;
+  
   border: none;
+  outline-style: none;
+  border-bottom: 1px solid #333;
 }
 
 .loginButton {
-  margin-top: 20px;
+
   cursor: pointer;
-  background-color: lightcoral;
+ background: teal;
   border: none;
   color: white;
-  border-radius: 10px;
-  padding: 10px;
+  
+  padding: 15px 12px;
+  align-self: flex-end;
+  width: 40%;
 }
 
-.loginButton:disabled{
-  cursor: not-allowed;
-  background-color: rgb(252, 173, 173);
-}
 
+
+.Toregister{
+  margin-top: 30px;
+  display: flex;
+   column-gap: 10px;
+   flex-flow: row wrap;
+ }
+.Toregister p{
+  font-size: 16px;
+ }
 .loginRegisterButton {
-  position: absolute;
-  top: 60px;
-  right: 20px;
-  background-color: teal;
-  cursor: pointer;
   border: none;
-  padding: 10px;
-  color: white;
-  border-radius: 10px;
+ cursor: pointer;
+   color: teal;
+
 }

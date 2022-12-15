@@ -1,3 +1,6 @@
 .single{
     display: flex;
+    max-width: 600px;
+    width: 80vw;
+    margin:10px auto;
 }

@@ -3,6 +3,7 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import { useContext, useState } from "react";
 import { Context } from "../../context/Context";
 import axios from "axios";
+import { useLocation } from "react-router";
 
 export default function Settings() {
   const [file, setFile] = useState(null);
@@ -10,7 +11,7 @@ export default function Settings() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [success, setSuccess] = useState(false);
-
+ const location = useLocation();
   const { user, dispatch } = useContext(Context);
   const PF = "http://localhost:5000/images/"
 
@@ -31,7 +32,9 @@ export default function Settings() {
       updatedUser.profilePic = filename;
       try {
         await axios.post("/upload", data);
-      } catch (err) {}
+      } catch (err) {
+        console.log(err);
+      }
     }
     try {
       const res = await axios.put("/users/" + user._id, updatedUser);
@@ -41,12 +44,22 @@ export default function Settings() {
       dispatch({ type: "UPDATE_FAILURE" });
     }
   };
+    const handleDelete = async () => {
+      try {
+
+      await axios.delete(`/users/${user._id}`, {
+        data: { userId: user._id},
+      });
+        dispatch({ type: "LOGOUT" });
+      window.location.replace("/");
+    } catch (err) {}
+  };
   return (
     <div className="settings">
       <div className="settingsWrapper">
         <div className="settingsTitle">
           <span className="settingsUpdateTitle">Update Your Account</span>
-          <span className="settingsDeleteTitle">Delete Account</span>
+          <span className="settingsDeleteTitle" onClick={handleDelete}>Delete Account</span>
         </div>
         <form className="settingsForm" onSubmit={handleSubmit}>
           <label>Profile Picture</label>
@@ -94,7 +107,7 @@ export default function Settings() {
           )}
         </form>
       </div>
-      <Sidebar />
+     
     </div>
   );
 }
